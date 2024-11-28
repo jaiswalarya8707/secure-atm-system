@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OTP Verification</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            text-align: center;
+        }
+        .otp {
+            font-size: 24px;
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #f0f0f0;
+            border: 1px solid #ddd;
+            width: 100px;
+            margin: 0 auto;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        input {
+            padding: 10px;
+            font-size: 16px;
+            margin: 10px 0;
+            width: 200px;
+        }
+        .message {
+            margin-top: 10px;
+            font-size: 14px;
+            color: rgb(0, 128, 75);
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>OTP Generation</h1>
+    <label for="phone">Enter Phone Number:</label><br>
+    <input type="text" id="phone" placeholder="Phone Number"><br>
+    <button onclick="sendOTP()">Send OTP</button>
+    
+    <div class="message" id="message"></div>
+</div>
+
+<script>
+    let generatedOTP = '';
+
+    function sendOTP() {
+        const phone = document.getElementById('phone').value;
+        if (phone.length === 10) { // Simple validation for a 10-digit number
+            generatedOTP = Math.floor(100000 + Math.random() * 900000); // Generate a 6-digit OTP
+            document.getElementById('message').innerText = `OTP sent to ${phone}`;
+            console.log('Generated OTP:', generatedOTP); // Log the OTP for testing purposes
+            // Here you would typically send the OTP via an SMS service
+        } else {
+            document.getElementById('message').innerText = 'Please enter a valid 10-digit phone number';
+        }
+    }
+</script>
+    <p>This is the second page.</p>
+    <a href="C:\Users\91900\Desktop\html\otp file.html">Go to next</a>
+
+</body>
+</html>

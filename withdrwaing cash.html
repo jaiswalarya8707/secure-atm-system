@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ATM Cash Withdrawal</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .atm-container {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+            max-width: 400px;
+            width: 100%;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        h1 {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+        input[type="number"] {
+            width: 80%;
+            padding: 10px;
+            margin: 10px 0;
+            font-size: 16px;
+            border-radius: 4px;
+            border: 1px solid #ddd;
+        }
+        button {
+            width: 100%;
+            padding: 10px;
+            font-size: 18px;
+            background-color: #28a745;
+            border: none;
+            color: white;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+        button:hover {
+            background-color: #218838;
+        }
+        .message {
+            margin-top: 15px;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+    <div class="atm-container">
+        <h1>ATM Cash Withdrawal</h1>
+        <label for="amount">Enter Amount:</label><br>
+        <input type="number" id="amount" placeholder="Enter amount to withdraw" min="0"><br>
+        <button onclick="withdrawCash()">Withdraw</button>
+        <div class="message" id="message"></div>
+    </div>
+
+    <script>
+        let balance = 1000;  // Initial balance for demonstration
+
+        function withdrawCash() {
+            const amount = parseFloat(document.getElementById('amount').value);
+            const message = document.getElementById('message');
+
+            if (isNaN(amount) || amount <= 0) {
+                message.textContent = "Please enter a valid amount.";
+                message.style.color = "orange";
+                return;
+            }
+
+            if (amount > balance) {
+                message.textContent = "Insufficient balance.";
+                message.style.color = "red";
+            } else {
+                balance -= amount;
+                message.textContent = `Withdrawal successful! Remaining balance: $${balance.toFixed(2)}`;
+                message.style.color = "green";
+            }
+        }
+    </script>
+</body>
+</html>

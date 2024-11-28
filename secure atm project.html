@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>ATM Front Page</title>
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+	<div class="atm-container">
+		<div class="header">
+			<img src="bank-logo.png" alt="Bank Logo">
+			<h1>Welcome to [BOB] ATM</h1>
+		</div>
+		<div class="language-selection">
+			<select id="language">
+				<option value="en">English</option>
+				<option value="es">Hindi</option>
+			</select>
+		</div>
+        <br>
+		<div class="account-selection">
+			<select id="account-type">
+				<option value="checking">Checking</option>
+				<option value="savings">Savings</option>
+				<option value="credit-card">Credit Card</option>
+			</select>
+		</div>
+        <br>
+        <form action="action.php">
+              <input type ="number" placeholder="amount">
+         </form>
+         <br>
+		<div class="action-buttons">
+			<button id="withdrawal-btn">Withdrawal</button>
+			<button id="deposit-btn">Deposit</button>
+			<button id="balance-btn">Balance Inquiry</button>
+			<button id="transfer-btn">Transfer</button>
+		</div>
+		<div class="footer">
+			<p> [BOB] 2024</p>
+		</div>
+	</div>
+	<script src="script.js"></script>
+</body>
+</html>

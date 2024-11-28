@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OTP Verification</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            text-align: center;
+        }
+        .otp {
+            font-size: 24px;
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #f0f0f0;
+            border: 1px solid #ddd;
+            width: 100px;
+            margin: 0 auto;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        input {
+            padding: 10px;
+            font-size: 16px;
+            margin: 10px 0;
+            width: 200px;
+        }
+        .message {
+            margin-top: 10px;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>OTP Verification</h1>
+    <label for="otp">Enter OTP:</label><br>
+    <input type="text" id="otp" placeholder="Enter OTP"><br>
+    <button onclick="verifyOTP()">Verify OTP</button>
+    
+    <div class="message" id="verificationMessage"></div>
+</div>
+
+<script>
+    let sentOTP = ''; // In real implementation, you'd fetch this from the server
+
+    // Simulate OTP from previous step
+    sentOTP = '123456'; // Example OTP for testing (replace this with the real generated OTP)
+
+    function verifyOTP() {
+        const enteredOTP = document.getElementById('otp').value;
+        if (enteredOTP == sentOTP) {
+            document.getElementById('verificationMessage').innerText = 'OTP Verified Successfully!';
+            document.getElementById('verificationMessage').style.color = 'green';
+        } else {
+            document.getElementById('verificationMessage').innerText = 'Invalid OTP. Please try again.';
+            document.getElementById('verificationMessage').style.color = 'red';
+        }
+    }
+</script>
+
+</body>
+</html>

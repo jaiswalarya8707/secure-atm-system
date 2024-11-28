@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ATM System with OTP Security</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f2f2f2;
+        }
+        .container {
+            max-width: 400px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            text-align: center;
+        }
+        input[type="text"], input[type="number"], input[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+      <script>
+        // Simulate OTP request
+        function sendOTP() {
+            alert("An OTP has been sent to your registered mobile number.");
+            // Here, you would actually trigger an API call to send the OTP
+        }
+
+        window.onload = sendOTP;
+    </script>
+    <div class="container">
+        <h2>ATM System - OTP Verification via SMS</h2>
+        <form id="otp-form" action="/verify-otp" method="post">
+            <label for="otp">Enter OTP:</label>
+            <input type="text" id="otp" name="otp" placeholder="Enter the OTP sent to your mobile" required>
+            <input type="submit" value="Verify OTP">
+        </form>
+    </div> 
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+</style>
+</script>
+<br>
+<p>This is the third page.</p>
+<br>
+    <a href="C:\Users\91900\Desktop\html\withdrwaing cash.html">Go to next</a>
+</body>
+</html>
